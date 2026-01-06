@@ -9,17 +9,26 @@ export default {
       langauge: ['Spring Boot', 'Node.js', 'Data Structure & Algorithm', 'Vue.js', 'React.js', 'Angular', 'MongoDB', 'MySQL'],
       btn_name: 'Tip',
       portfolio_link: 'https://guddu1cse.github.io/myportfolio',
-      resume_link: 'https://hackerrank-resume.s3.us-east-1.amazonaws.com/uploads/9758288/OTc1ODI4OA==.pdf'
+      resume_link: 'https://hackerrank-resume.s3.us-east-1.amazonaws.com/uploads/9758288/OTc1ODI4OA==.pdf',
+      count: 0
     }
   },
 
   methods: {
     btnTip() {
-      if(this.btn_name === 'Tip'){
+      if(this.count >=4){
+        this.btn_name = "Ruk ja abb!";
+      } else if(this.btn_name === 'Tip'){
         this.btn_name = 'Tap';
       } else {
          this.btn_name = 'Tip';
       }
+      this.count++;
+    },
+
+    reset() {
+      this.count = 0;
+      this.btn_name = 'Tip';
     }
   }
 }
@@ -39,7 +48,7 @@ export default {
     <button class="btn" v-on:click="btnTip">
       {{ btn_name }}
     </button>
-
+    <button v-if="count >= 4" class="btn" v-on:click="reset">Clear Kar Do!</button>
     <div class="links">
       <a :href="portfolio_link" target="_blank">Portfolio</a>
       <a :href="resume_link" target="_blank">Resume</a>
