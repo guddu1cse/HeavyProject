@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       name: 'Bada Wala Project In Vue.js',
-      title: 'HeavyProject',
+      title: 'Heavy Project',
       description:
         'HeavyProject is a learning-focused project built to practice and strengthen core development skills. It is used to explore concepts step by step, experiment with features, and gain hands-on experience by building and improving real functionality during the learning process.'
     }
