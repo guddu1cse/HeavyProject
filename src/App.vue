@@ -16,6 +16,7 @@ export default {
 
   methods: {
     btnTip() {
+      this.count++;
       if(this.count >=4){
         this.btn_name = "Ruk ja abb!";
       } else if(this.btn_name === 'Tip'){
@@ -23,7 +24,6 @@ export default {
       } else {
          this.btn_name = 'Tip';
       }
-      this.count++;
     },
 
     reset() {
